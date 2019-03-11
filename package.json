@@ -2,7 +2,9 @@
   "name": "@jarlotee/generator-node-project",
   "version": "0.1.0",
   "description": "A yeoman generator for node projects, or sites that use node to build assets",
-  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
