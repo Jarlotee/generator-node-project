@@ -22,6 +22,10 @@ Node... so many options, frameworks, always changing, lets tame the beast...
 ### What you get
 
 ```bash
+├── .editorconfig
+├── .gitignore
+├── .npmrc
+├── .prettierrc
 ├── package.json
 ├── readme.md
 ├── src
