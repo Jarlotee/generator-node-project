@@ -1,0 +1,33 @@
+const express = require('express');
+const next = require('next');
+
+const isProduction = process.env.NODE_ENV == 'production';
+const port = parseInt(process.env.PORT) || 3000;
+
+const app = next({
+  dev: !isProduction,
+  dir: __dirname
+});
+
+const handle = app.getRequestHandler();
+
+app.prepare().then(() => {
+  const server = express();
+
+  server.get('/api/ping', (req, res) => {
+    res.send('pong');
+  });
+
+  // pass everything else to next
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  });
+
+  server.listen(port, (err) => {
+    if (err) {
+      throw err
+    }
+
+    console.log(`> Ready on http://localhost:${port}`)
+  });
+});

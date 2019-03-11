@@ -1,0 +1,30 @@
+{
+  "name": "generator-node-project",
+  "version": "0.1.0",
+  "description": "A yeoman generator for node projects, or sites that use node to build assets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarlotee/generator-node-project.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "node",
+    "nodejs",
+    "project",
+    "bootstrap"
+  ],
+  "author": "Jarlotee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jarlotee/generator-node-project/issues"
+  },
+  "homepage": "https://github.com/Jarlotee/generator-node-project#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "yeoman-generator": "^3.2.0"
+  }
+}

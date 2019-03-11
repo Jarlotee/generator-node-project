@@ -1,0 +1,29 @@
+import App, { Container } from 'next/app';
+import Head from 'next/head';
+import React, { StatelessComponent } from 'react';
+
+const Layout: StatelessComponent = ({ children }) => (
+  <>
+    <Head>
+      <title>My Website</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <header />
+    {children}
+    <footer />
+  </>
+);
+
+export default class CustomApp extends App {
+  public render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+      <Container>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Container>
+    );
+  }
+}
