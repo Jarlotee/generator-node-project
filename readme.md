@@ -40,7 +40,7 @@ Options may be added later, but here is they are:
 
 * Typescript w/ tslint
 * Prettier
-* Production builds require you to populate the `BuildNumber` environment variable to create a consistent hash for load balancing
+* Populate the `BuildNumber` environment variable to create a consistent hash for load balancing
 
 ## License
 MIT
