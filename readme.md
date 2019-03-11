@@ -6,7 +6,7 @@ Helps you bootstrap your respository for a next.js projects.
 
 ### Getting Started
 
-* Install `npm install -g generator-node-project`
+* Install `npm install -g @jarlotee/generator-node-project`
 * Run `yo node-project`
 
 ### Options
