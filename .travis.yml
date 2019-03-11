@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- lts/*
+script: true
+deploy:
+  provider: npm
+  email: jaredlotti@gmail.com
+  api_key:
+    secure: cir2xDdr/A4I9wkxkJ2wasvE1R6O9IF/CZVzlWns69ZU2XfG1PdobmWtZssl68maQmd24uESRNdMEV7+b0eIdC+ZAcY5Z2C6TBjcV+6gME8f9K3Ro7eBmbmPF/uD+9FoHFCeE44uBuvFHQ/Fo7vkquZGER6i2eVMbMPR9TzSIAnanQvcS/eM5xNV4Z6fLNrJZ2+aXQ+UuGMQKOPVw7AdX2Q+NHiIK1QebmsGOiflWdwZSW/0bY2LNVOyvlJzMTkaIEXUgKCrXzISl7QRhZg0HmH+hBMP2bhNmMYZiXQ0AWtEIbYzLksYgHncTwAvCKxzrgT+cMdNDr4VeBfWSaWsYiEZAzcoMaaoLLi2nwhumeNA7ZxG/dFlvyGPuDhhhV+iismJbp0GNdhC5RA0nAfiBchUBrgBvqIpWopERlIeEtulcpmzynRNDTXkRzuBcq88q0AXpDaAhc9uLJIxd84J+rDvjRiSpuyahU1TsYw9pv6IR6Q3XisMCvOiwqhqoB0qhqHV7xDeQbosk6mUb0qaVs76Z+2O3H++MTWk959NlDTORUHu+GvKqOl3sSp3yrE16Woc1mc6wHnjQtF/fC403P6IE//33E5Q8P/pFMEGx/z/1b6r546BO7QE6QXgJTV8tn7oh3saj8HGIc1jtqd1cDT2N2DmPUG6pyXBoyufZIo=
+  on:
+    tags: true
+    repo: Jarlotee/generator-node-project
+    branch: master
