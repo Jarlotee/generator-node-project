@@ -1,4 +1,4 @@
-## Dotnet Project Generator
+## Node Project Generator
 [![Build Status](https://travis-ci.org/Jarlotee/generator-node-project.svg?branch=master)](https://travis-ci.org/Jarlotee/generator-node-project)
 ![Dependency Status](https://david-dm.org/Jarlotee/generator-node-project.svg)
 
