@@ -1,6 +1,6 @@
 {
   "name": "@jarlotee/generator-node-project",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A yeoman generator for node projects, or sites that use node to build assets",
   "publishConfig": {
     "access": "public"
