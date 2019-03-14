@@ -14,7 +14,7 @@ Helps you bootstrap your respository for a next.js projects.
 Node... so many options, frameworks, always changing, lets tame the beast...
  What is the name of your project? next-project
  What kind of project would you like to create? next.js
- You definitly want unit tests, right? Yes
+ You definitely want unit tests, right? Yes
  How about an .editorconfig? Yes
  Would you like to supress package-lock generation? Yes
 ```

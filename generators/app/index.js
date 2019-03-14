@@ -32,7 +32,7 @@ module.exports = class extends Generator {
       {
         type: 'confirm',
         name: 'createUnitTests',
-        message: 'You definitly want unit tests, right?',
+        message: 'You definitely want unit tests, right?',
         default: true,
         when: (answers) => !!answers.projectType,
         prefix: ''
