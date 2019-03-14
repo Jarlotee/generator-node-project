@@ -100,16 +100,25 @@ module.exports = class extends Generator {
     if (this.answers.projectType === 'next.js') {
       this.fs.extendJSON('package.json', {
         scripts: {
-          dev: 'node src/server.js',
-          build: 'next build src',
-          start: 'NODE_ENV=production node src/server.js'
+          dev: "node src/server.js",
+          build: "next build src",
+          start: "cross-env NODE_ENV=production node src/server.js"
         },
         babel: {
           presets: [
             "next/babel",
             "@zeit/next-typescript/babel"
           ]
-        }
+        },
+        bundledDependencies: [
+          "@zeit/next-sass",
+          "@zeit/next-typescript",
+          "express",
+          "fork-ts-checker-webpack-plugin",
+          "next",
+          "react",
+          "react-dom"
+        ]
       });
 
       this.fs.copyTpl(
@@ -133,8 +142,13 @@ module.exports = class extends Generator {
       );
 
       this.fs.copyTpl(
+        this.templatePath('npmignore.template'),
+        this.destinationPath('.npmignore')
+      );
+
+      this.fs.copyTpl(
         this.templatePath('nextjs/server.template'),
-        this.destinationPath('src/server.js')
+        this.destinationPath('server.js')
       );
 
       this.fs.copyTpl(
@@ -152,26 +166,27 @@ module.exports = class extends Generator {
   install() {
     if (this.answers.projectType === 'next.js') {
       this.npmInstall([
+        'express',
+        'fork-ts-checker-webpack-plugin',
+        'next',
         'react',
         'react-dom',
-        'next',
-        'express'
+        '@zeit/next-sass',
+        '@zeit/next-typescript'
       ]);
 
       this.npmInstall([
         '@types/react',
         '@types/next',
-        '@zeit/next-sass',
-        '@zeit/next-typescript',
+        'cross-env',
         'prettier',
-        'typescript',
         'tslint',
-        'tslint-loader',
-        'tslint-react',
         'tslint-config-airbnb',
         'tslint-config-prettier',
+        'tslint-loader',
+        'tslint-react',
         'tslint-plugin-prettier',
-        'fork-ts-checker-webpack-plugin'
+        'typescript'
       ], { 'save-dev': true });
     }
   }

@@ -1,12 +1,14 @@
 const express = require('express');
 const next = require('next');
 
-const isProduction = process.env.NODE_ENV == 'production';
-const port = parseInt(process.env.PORT) || 3000;
+const NODE_ENV = process.env.APPSETTING_NODE_ENV || process.env.NODE_ENV;
+const isProduction = NODE_ENV == 'production';
+
+const port = process.env.PORT || 3000;
 
 const app = next({
   dev: !isProduction,
-  dir: __dirname
+  dir: 'src',
 });
 
 const handle = app.getRequestHandler();
@@ -20,14 +22,14 @@ app.prepare().then(() => {
 
   // pass everything else to next
   server.get('*', (req, res) => {
-    return handle(req, res)
+    return handle(req, res);
   });
 
-  server.listen(port, (err) => {
+  server.listen(port, err => {
     if (err) {
-      throw err
+      throw err;
     }
 
-    console.log(`> Ready on http://localhost:${port}`)
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
